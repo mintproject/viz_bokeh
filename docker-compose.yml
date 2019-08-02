@@ -9,4 +9,11 @@ services:
           TORNADO_VERSION: 6.0.3
     image: "mint-project/viz_bokeh:latest"
     ports:
-      - 9099:8080
+      - 9099:5006
+  gams:
+    build:
+      context: .
+      dockerfile: Dockerfile-gams
+    image: "mint-project/viz_bokeh:gams"
+    ports:
+      - 9098:5006      
