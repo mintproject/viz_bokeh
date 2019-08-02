@@ -78,7 +78,7 @@ def update_data(attr, old, new):
                 p_read[idx]*(1+float(slider_values[slider_values['crop']==item]['p_adj'])/100)])
 
     #Run the econ model
-    subprocess.run(["gams","economic/LiveUpdates/MINT_v6.gms"])
+    subprocess.run(["/opt/gams/gams27.3_linux_x64_64_sfx/gams","economic/LiveUpdates/MINT_v6.gms"])
     
     #Get the results
     econ_data = pd.read_csv("economic/LiveUpdates/MINT_v6_simulation_output.txt",index_col=False)  
@@ -126,7 +126,7 @@ with open(csv_file2,'w',newline='') as csvfile2:
                 p_read[idx]])
 
 #Run the econ model
-subprocess.run(["gams","MINT_v6.gms"])
+subprocess.run(["/opt/gams/gams27.3_linux_x64_64_sfx/gams","MINT_v6.gms"])
 
 # Source data for the bar charts 
 base = pd.read_csv("MINT_v6_simulation_output.txt",index_col=False)       
