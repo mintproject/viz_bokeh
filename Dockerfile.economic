@@ -1,5 +1,5 @@
 #/* vim: set filetype=dockerfile : */
-FROM python:stretch
+FROM mint-project/viz_bokeh:gams
 
 RUN mkdir /bokeh
 WORKDIR /bokeh
@@ -7,4 +7,4 @@ COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 COPY . /bokeh
 
-ENTRYPOINT [ "bokeh", "serve",  "--show", "economic/LookupTable/econ_viz.py", "--allow-websocket-origin=localhost:9099"]
+ENTRYPOINT [ "bokeh", "serve",  "--show", "economic/LookupTable/econ_viz.py", "--allow-websocket-origin=localhost:9098"]

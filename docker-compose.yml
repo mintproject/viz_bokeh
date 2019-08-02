@@ -23,5 +23,5 @@ services:
   gams:
     build:
       context: .
-      dockerfile: Dockerfile-gams
+      dockerfile: Dockerfile.gams
     image: "mint-project/viz_bokeh:gams"
