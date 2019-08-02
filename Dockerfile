@@ -1,12 +1,10 @@
 #/* vim: set filetype=dockerfile : */
-FROM python:alpine
-
-ARG BOKEH_VERSION
-RUN apk add --no-cache g++ wget
+FROM python:stretch
 
 RUN mkdir /bokeh
 WORKDIR /bokeh
-COPY . /bokeh
+COPY ./requirements.txt .
 RUN pip install -r requirements.txt
+COPY . /bokeh
 
-ENTRYPOINT [ "bokeh serve  --show cycles/cycles_viz.py economic/LookupTable/econ_viz.py" ]
+ENTRYPOINT [ "bokeh", "serve",  "--show", "cycles/cycles_viz.py",  "--allow-websocket-origin=localhost:9099"]
