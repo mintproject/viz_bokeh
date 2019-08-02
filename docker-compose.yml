@@ -3,17 +3,14 @@ services:
   economic:
     build:
       context: .
-      dockerfile: Dockerfile.economic
-      args:
-          BOKEH_VERSION: 0.13.0
-          TORNADO_VERSION: 6.0.3
+      dockerfile: Dockerfile
     image: "mint-project/viz_bokeh:economic"
     ports:
       - 9099:5006
   common:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile-base
       args:
           BOKEH_VERSION: 0.13.0
           TORNADO_VERSION: 6.0.3

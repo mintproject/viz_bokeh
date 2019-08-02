@@ -1,0 +1,8 @@
+#/* vim: set filetype=dockerfile : */
+FROM python:stretch
+
+RUN mkdir /bokeh
+WORKDIR /bokeh
+COPY ./requirements.txt .
+RUN pip install -r requirements.txt
+COPY . /bokeh
