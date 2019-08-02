@@ -1,0 +1,11 @@
+version: '3'
+services:
+  prod:
+    build:
+      context: .
+      args:
+          BOKEH_VERSION: 0.13.0
+          TORNADO_VERSION: 6.0.3
+    image: "mint-project/viz_bokeh:latest"
+    ports:
+      - 9099:8080
