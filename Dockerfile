@@ -7,4 +7,4 @@ COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 COPY . /bokeh
 
-ENTRYPOINT [ "bokeh", "serve",  "--show", "cycles/cycles_viz.py",  "--allow-websocket-origin=localhost:9099"]
+ENTRYPOINT [ "bokeh", "serve",  "--show", "cycles/cycles_viz.py",  "--allow-websocket-origin=viz.mint.isi.edu"]

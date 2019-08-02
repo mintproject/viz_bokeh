@@ -26,4 +26,4 @@ RUN GAMS_PATH=$(dirname $(find / -name gams -type f -executable -print)) &&\
     cd $GAMS_PATH &&\
     ./gamsinst -a 
 
-ENTRYPOINT [ "bokeh", "serve",  "--show", "economic/LookupTable/econ_viz.py", "--allow-websocket-origin=localhost:9098"]
+ENTRYPOINT [ "bokeh", "serve",  "--show",  "cycles/cycles_viz.py", "economic/LookupTable/econ_viz.py", "--allow-websocket-origin=viz.mint.isi.edu"]
