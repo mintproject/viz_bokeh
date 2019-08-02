@@ -3,7 +3,7 @@ services:
   economic-prod:
     build:
       context: .
-      dockerfile: Dockerfile-debian
+      dockerfile: Dockerfile-economic
       args:
           BOKEH_VERSION: 0.13.0
           TORNADO_VERSION: 6.0.3
