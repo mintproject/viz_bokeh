@@ -3,6 +3,7 @@ FROM python:alpine
 
 ARG BOKEH_VERSION
 RUN apk add --no-cache g++ wget
+
 RUN mkdir /bokeh
 WORKDIR /bokeh
 COPY . /bokeh
