@@ -135,7 +135,7 @@ subprocess.run(["/opt/gams/gams27.3_linux_x64_64_sfx/gams","MINT_v6.gms"])
 os.chdir(wd)
 
 # Source data for the bar charts 
-base = pd.read_csv("MINT_v6_simulation_output.txt",index_col=False)       
+base = pd.read_csv("/bokeh/economic/LiveUpdates/MINT_v6_simulation_output.txt",index_col=False)       
 source = ColumnDataSource(data=dict(x=x, y=list(base['yield (kg/ha)'])))
 source1 = ColumnDataSource(data=dict(x=x, y=list(base['Nfert (kg/ha)'])))
 source2 = ColumnDataSource(data=dict(x=x, y=list(base['production (kg)'])))
