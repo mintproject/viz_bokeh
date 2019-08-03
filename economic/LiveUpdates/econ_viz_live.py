@@ -78,8 +78,11 @@ def update_data(attr, old, new):
                 p_read[idx]*(1+float(slider_values[slider_values['crop']==item]['p_adj'])/100)])
 
     #Run the econ model
-    subprocess.run(["/opt/gams/gams27.3_linux_x64_64_sfx/gams","economic/LiveUpdates/MINT_v6.gms"])
-    
+    wd = os.getcwd()
+    os.chdir("/bokeh/economic/LiveUpdates/")
+    subprocess.run(["/opt/gams/gams27.3_linux_x64_64_sfx/gams","MINT_v6.gms"])
+    os.chdir(wd)
+
     #Get the results
     econ_data = pd.read_csv("economic/LiveUpdates/MINT_v6_simulation_output.txt",index_col=False)  
     # Update the data
@@ -126,10 +129,13 @@ with open(csv_file2,'w',newline='') as csvfile2:
                 p_read[idx]])
 
 #Run the econ model
+wd = os.getcwd()
+os.chdir("/bokeh/economic/LiveUpdates/")
 subprocess.run(["/opt/gams/gams27.3_linux_x64_64_sfx/gams","MINT_v6.gms"])
+os.chdir(wd)
 
 # Source data for the bar charts 
-base = pd.read_csv("economic/LiveUpdates/MINT_v6_simulation_output.txt",index_col=False)       
+base = pd.read_csv("MINT_v6_simulation_output.txt",index_col=False)       
 source = ColumnDataSource(data=dict(x=x, y=list(base['yield (kg/ha)'])))
 source1 = ColumnDataSource(data=dict(x=x, y=list(base['Nfert (kg/ha)'])))
 source2 = ColumnDataSource(data=dict(x=x, y=list(base['production (kg)'])))
