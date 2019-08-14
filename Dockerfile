@@ -12,4 +12,4 @@ RUN pip install -r requirements.txt
 COPY . .
 RUN ./run
 
-ENTRYPOINT [ "bokeh", "serve",  "--show",  "cycles/cycles_viz.py", "economic/calibration/econ_calib_viz.py", "--allow-websocket-origin=viz.mint.isi.edu"]
+ENTRYPOINT [ "bokeh", "serve",  "--show",  "economic/economic_live/LiveUpdates/econ_viz_live.py", "cycles/cycles_viz.py", "economic/calibration/econ_calib_viz.py", "--allow-websocket-origin=viz.mint.isi.edu"]
