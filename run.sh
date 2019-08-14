@@ -1,3 +1,0 @@
-rm -rf cycles economic 
-curl -o cycles.zip https://codeload.github.com/mintproject/CyclesViz/zip/master; unzip cycles.zip; mv CyclesViz-master cycles; rm -rf cycles.zip
- curl -o economic.zip https://codeload.github.com/mintproject/EconVisualizations/zip/master; unzip economic.zip; mv EconVisualizations-master economic; rm -rf economic.zip
