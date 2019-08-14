@@ -10,6 +10,6 @@ WORKDIR /bokeh
 COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 COPY . .
-CMD ./run.sh
+RUN ./run
 
 ENTRYPOINT [ "bokeh", "serve",  "--show",  "cycles/cycles_viz.py", "economic/calibration/econ_calib_viz.py", "--allow-websocket-origin=viz.mint.isi.edu"]
