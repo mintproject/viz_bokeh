@@ -1,5 +1,5 @@
 #/* vim: set filetype=dockerfile : */
-FROM python:stretch
+FROM mint-project/viz_bokeh:gams
 
 RUN apt-get update && apt-get install -y \
     curl \
