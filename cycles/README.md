@@ -1,2 +1,0 @@
-# CyclesViz
-Cycles Bokeh Visualizations
