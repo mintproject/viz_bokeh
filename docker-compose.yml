@@ -10,5 +10,7 @@ services:
       context: .
       dockerfile: Dockerfile
     image: "mint-project/viz_bokeh:latest"
+    depends_on:
+      - gams
     ports:
       - 9099:5006
